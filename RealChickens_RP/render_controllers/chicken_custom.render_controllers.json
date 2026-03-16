@@ -1,0 +1,16 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.chicken_custom": {
+            "geometry": "variable.geometry",
+            "materials": [
+                {
+                    "*": "material.default"
+                }
+            ],
+            "textures": [
+                "variable.chicken_variant == 0 ? texture.default : (variable.chicken_variant == 1 ? texture.warm : (variable.chicken_variant == 2 ? texture.cold : texture.default))"
+            ]
+        }
+    }
+}

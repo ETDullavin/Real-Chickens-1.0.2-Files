@@ -1,0 +1,20 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"blue_egg": {
+			"textures": "textures/blocks/blue_egg"
+		},
+		"brown_egg": {
+			"textures": "textures/blocks/brown_egg"
+		},
+		"egg": {
+			"textures": "textures/blocks/egg"
+		},
+		"gold_egg": {
+			"textures": "textures/blocks/gold_egg"
+		}
+	}
+}

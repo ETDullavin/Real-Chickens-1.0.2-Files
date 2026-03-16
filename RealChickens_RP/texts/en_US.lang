@@ -1,0 +1,7 @@
+tile.real_chickens:egg.name=Egg
+tile.real_chickens:brown_egg.name=Brown Egg
+tile.real_chickens:blue_egg.name=Blue Egg
+tile.real_chickens:gold_egg.name=Gold Egg
+tile.real_chickens:temperate_hatch.name=Egg
+tile.real_chickens:warm_hatch.name=Brown Egg
+tile.real_chickens:cold_hatch.name=Blue Egg

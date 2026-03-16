@@ -1,0 +1,15 @@
+{
+	"format_version": "1.21.0",
+	"real_chickens:blue_egg": {
+		"sound": "glass"
+	},
+	"real_chickens:brown_egg": {
+		"sound": "glass"
+	},
+	"real_chickens:egg": {
+		"sound": "glass"
+	},
+	"real_chickens:gold_egg": {
+		"sound": "metal"
+	}
+}

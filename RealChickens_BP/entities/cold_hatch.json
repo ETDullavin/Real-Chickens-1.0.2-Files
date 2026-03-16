@@ -1,0 +1,101 @@
+{
+    "format_version": "1.21.90",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "real_chickens:cold_hatch",
+            "runtime_identifier": "real_chickens:cold_hatch",
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "real_chickens:hatch_process": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "minecraft:chicken",
+                            "spawn_event": "set_cold_variant",
+                            "single_use": true
+                        }
+                    ]
+                },
+                "minecraft:health": {
+                    "value": 0,
+                    "max": 1
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:collision_box": {
+                "width": 0.25,
+                "height": 0.25
+            },
+            "minecraft:timer": {
+                "time": 1260,
+                "looping": false,
+                "time_down_event": {
+                    "event": "real_chickens:start_hatching",
+                    "target": "self"
+                }
+            },
+            "minecraft:health": {
+                "value": 1,
+                "max": 1
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            }
+                        },
+                        "deals_damage": "no"
+                    },
+                    {
+                        "deals_damage": "yes"
+                    }
+                ]
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:type_family": {
+                "family": [
+                    "player",
+                    "chicken",
+                    "egg_family",
+                    "inanimate"
+                ]
+            },
+            "minecraft:rideable": {
+                "seat_count": 1,
+                "pull_in_entities": true,
+                "family_types": [
+                    "broody"
+                ],
+                "seats": {
+                    "position": [
+                        0,
+                        -0.5,
+                        0
+                    ]
+                }
+            }
+        },
+        "events": {
+            "real_chickens:start_hatching": {
+                "add": {
+                    "component_groups": [
+                        "real_chickens:hatch_process"
+                    ]
+                }
+            }
+        }
+    }
+}

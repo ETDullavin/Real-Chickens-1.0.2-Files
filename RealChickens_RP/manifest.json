@@ -1,0 +1,46 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Real Chickens 1.0.2",
+		"description": "Real Chickens Resource Pack",
+		"uuid": "fd347ec8-91a8-6b22-a9f5-f8513aaad208",
+		"version": [
+			1,
+			0,
+			2
+		],
+		"min_engine_version": [
+			1,
+			21,
+			0
+		]
+	},
+	"metadata": {
+		"authors": [
+			"Akai Studios"
+		],
+		"generated_with": {
+			"blockbench_entity_wizard": [
+				"1.8.2"
+			],
+			"blockbench_block_wizard": [
+				"1.6.1"
+			]
+		}
+	},
+	"modules": [
+		{
+			"description": "Real Chickens",
+			"type": "resources",
+			"uuid": "b6a1d0ca-9b5b-fb9c-cd52-606e760d94a3",
+			"version": [
+				1,
+				0,
+				2
+			],
+			"capabilities": [
+				"pbr"
+			]
+		}
+	]
+}
