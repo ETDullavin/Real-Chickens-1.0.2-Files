@@ -1,3 +1,4 @@
+# Ctrl + Shift + B to sync folder contents to Minecraft Bedrock Addon development folders
 # --- CONFIGURATION ---
 $AddonName = "Real Chickens" 
 $SourcePath = Get-Location
