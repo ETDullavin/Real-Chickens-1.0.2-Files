@@ -1,13 +1,13 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "Real Chickens 1.0.2",
+		"name": "Real Chickens 1.1.0 (beta)",
 		"description": "Real Chickens Resource Pack",
 		"uuid": "fd347ec8-91a8-6b22-a9f5-f8513aaad208",
 		"version": [
 			1,
-			0,
-			2
+			1,
+			0
 		],
 		"min_engine_version": [
 			1,
@@ -35,8 +35,8 @@
 			"uuid": "b6a1d0ca-9b5b-fb9c-cd52-606e760d94a3",
 			"version": [
 				1,
-				0,
-				2
+				1,
+				0
 			],
 			"capabilities": [
 				"pbr"

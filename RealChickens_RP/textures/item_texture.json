@@ -1,0 +1,7 @@
+{
+	"texture_data": {
+		"rooster_spawn_egg": {
+			"textures": ["textures/items/rooster_spawn_egg"]
+		}
+	}
+}
