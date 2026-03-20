@@ -9,10 +9,14 @@
 				"legs": "chicken_legs"
 			},
 			"textures": {
-				"default": "textures/entity/rooster"
+				"default": "textures/entity/rooster",
+				"warm": "textures/entity/rooster_warm",
+				"cold": "textures/entity/rooster_cold"
 			},
 			"geometry": {
-				"default": "geometry.rooster"
+				"default": "geometry.rooster",
+				"warm": "geometry.rooster_warm",
+				"cold": "geometry.rooster_cold"
 			},
 			"animations": {
 				"move": "animation.rooster.move",
@@ -32,7 +36,9 @@
 					}
 				]
 			},
-			"render_controllers": ["controller.render.chicken"],
+			"render_controllers": [
+				"controller.render.rooster"
+			],
 			"spawn_egg": {
 				"texture": "rooster_spawn_egg"
 			}

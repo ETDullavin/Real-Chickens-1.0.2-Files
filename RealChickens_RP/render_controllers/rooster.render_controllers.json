@@ -1,0 +1,38 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.rooster": {
+            "arrays": {
+                "textures": {
+                    "Array.skins": [
+                        "texture.default",
+                        "texture.warm",
+                        "texture.cold"
+                    ]
+                },
+                "geometries": {
+                    "Array.geos": [
+                        "geometry.default",
+                        "geometry.warm",
+                        "geometry.cold"
+                    ]
+                }
+            },
+            "geometry": "Array.geos[query.variant]",
+            "materials": [
+                {
+                    "*": "Material.default"
+                },
+                {
+                    "leg0": "Material.legs"
+                },
+                {
+                    "leg1": "Material.legs"
+                }
+            ],
+            "textures": [
+                "Array.skins[query.variant]"
+            ]
+        }
+    }
+}

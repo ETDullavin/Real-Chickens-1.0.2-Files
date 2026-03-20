@@ -69,6 +69,144 @@
 						]
 					}
 				}
+			},
+			"real_chickens:variant_temperate": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"real_chickens:variant_warm": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			},
+			"real_chickens:variant_cold": {
+				"minecraft:variant": {
+					"value": 2
+				}
+			},
+			"real_chickens:biome_sensor": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_biome_tag",
+										"value": "cold"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "snowy"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "frozen"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "ice"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "mountains"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "extreme_hills"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "taiga"
+									}
+								]
+							},
+							"event": "real_chickens:set_cold"
+						},
+						{
+							"filters": {
+								"any_of": [
+									{
+										"test": "has_biome_tag",
+										"value": "is_hot"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "savanna"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "jungle"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "desert"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "mesa"
+									}
+								]
+							},
+							"event": "real_chickens:set_warm"
+						},
+						{
+							"filters": {
+								"none_of": [
+									{
+										"test": "has_biome_tag",
+										"value": "is_hot"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "savanna"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "jungle"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "desert"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "mesa"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "cold"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "snowy"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "frozen"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "ice"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "mountains"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "extreme_hills"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "taiga"
+									}
+								]
+							},
+							"event": "real_chickens:set_temperate"
+						}
+					]
+				}
 			}
 		},
 		"components": {
@@ -77,6 +215,9 @@
 					"chicken",
 					"mob"
 				]
+			},
+			"minecraft:variant": {
+				"value": 0
 			},
 			"minecraft:breathable": {
 				"total_supply": 15,
@@ -176,23 +317,45 @@
 		},
 		"events": {
 			"from_egg": {
-				"add": {
-					"component_groups": [
-						"minecraft:rooster_baby"
-					]
-				}
-			},
-			"minecraft:entity_spawned": {
-				"randomize": [
+				"sequence": [
 					{
-						"weight": 95,
-						"trigger": "minecraft:spawn_adult"
-					},
-					{
-						"weight": 5,
 						"add": {
 							"component_groups": [
 								"minecraft:rooster_baby"
+							]
+						}
+					},
+					{
+						"add": {
+							"component_groups": [
+								"real_chickens:biome_sensor"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 95,
+								"trigger": "minecraft:spawn_adult"
+							},
+							{
+								"weight": 5,
+								"add": {
+									"component_groups": [
+										"minecraft:rooster_baby"
+									]
+								}
+							}
+						]
+					},
+					{
+						"add": {
+							"component_groups": [
+								"real_chickens:biome_sensor"
 							]
 						}
 					}
@@ -222,6 +385,42 @@
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_adult"
+					]
+				}
+			},
+			"real_chickens:set_cold": {
+				"remove": {
+					"component_groups": [
+						"real_chickens:biome_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"real_chickens:variant_cold"
+					]
+				}
+			},
+			"real_chickens:set_warm": {
+				"remove": {
+					"component_groups": [
+						"real_chickens:biome_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"real_chickens:variant_warm"
+					]
+				}
+			},
+			"real_chickens:set_temperate": {
+				"remove": {
+					"component_groups": [
+						"real_chickens:biome_sensor"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"real_chickens:variant_temperate"
 					]
 				}
 			}
