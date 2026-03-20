@@ -63,12 +63,16 @@
 				"minecraft:rideable": {
 					"seat_count": 1,
 					"family_types": [
-						"zombie"
+						"baby_zombie",
+						"baby_husk",
+						"baby_drowned",
+						"baby_zombified_piglin",
+						"baby_zombie_villager"
 					],
 					"seats": {
 						"position": [
 							0,
-							0.4,
+							0.48,
 							0
 						]
 					}
