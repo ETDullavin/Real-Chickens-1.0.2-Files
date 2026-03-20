@@ -8,7 +8,7 @@
             "is_experimental": false
         },
         "component_groups": {
-            "real_chickens:hatch_process": {
+            "real_chickens:hatch_hen": {
                 "minecraft:spawn_entity": {
                     "entities": [
                         {
@@ -16,6 +16,23 @@
                             "max_wait_time": 0,
                             "spawn_entity": "minecraft:chicken",
                             "spawn_event": "set_warm_variant",
+                            "single_use": true
+                        }
+                    ]
+                },
+                "minecraft:health": {
+                    "value": 0,
+                    "max": 1
+                }
+            },
+            "real_chickens:hatch_rooster": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "real_chickens:rooster",
+                            "spawn_event": "real_chickens:hatch_as_warm",
                             "single_use": true
                         }
                     ]
@@ -33,7 +50,7 @@
                 "height": 0.25
             },
             "minecraft:timer": {
-                "time": 1260,
+                "time": 12.60,
                 "looping": false,
                 "time_down_event": {
                     "event": "real_chickens:start_hatching",
@@ -90,11 +107,24 @@
         },
         "events": {
             "real_chickens:start_hatching": {
-                "add": {
-                    "component_groups": [
-                        "real_chickens:hatch_process"
-                    ]
-                }
+                "randomize": [
+                    {
+                        "weight": 1,
+                        "add": {
+                            "component_groups": [
+                                "real_chickens:hatch_hen"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "add": {
+                            "component_groups": [
+                                "real_chickens:hatch_rooster"
+                            ]
+                        }
+                    }
+                ]
             }
         }
     }

@@ -20,7 +20,9 @@
 						"wheat_seeds",
 						"beetroot_seeds",
 						"melon_seeds",
-						"pumpkin_seeds"
+						"pumpkin_seeds",
+						"nether_wart",
+						"torchflower_seeds"
 					],
 					"grow_up": {
 						"event": "minecraft:ageable_grow_up",
@@ -49,7 +51,9 @@
 						"wheat_seeds",
 						"beetroot_seeds",
 						"melon_seeds",
-						"pumpkin_seeds"
+						"pumpkin_seeds",
+						"nether_wart",
+						"torchflower_seeds"
 					]
 				},
 				"minecraft:behavior.breed": {
@@ -293,7 +297,9 @@
 					"wheat_seeds",
 					"beetroot_seeds",
 					"melon_seeds",
-					"pumpkin_seeds"
+					"pumpkin_seeds",
+					"nether_wart",
+					"torchflower_seeds"
 				]
 			},
 			"minecraft:behavior.random_stroll": {
@@ -423,6 +429,42 @@
 						"real_chickens:variant_temperate"
 					]
 				}
+			},
+			"real_chickens:hatch_as_temperate": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:rooster_baby",
+								"real_chickens:variant_temperate"
+							]
+						}
+					}
+				]
+			},
+			"real_chickens:hatch_as_warm": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:rooster_baby",
+								"real_chickens:variant_warm"
+							]
+						}
+					}
+				]
+			},
+			"real_chickens:hatch_as_cold": {
+				"sequence": [
+					{
+						"add": {
+							"component_groups": [
+								"minecraft:rooster_baby",
+								"real_chickens:variant_cold"
+							]
+						}
+					}
+				]
 			}
 		}
 	}
