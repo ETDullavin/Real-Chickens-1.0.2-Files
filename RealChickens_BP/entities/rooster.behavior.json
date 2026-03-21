@@ -32,6 +32,13 @@
 				"minecraft:behavior.follow_parent": {
 					"priority": 5,
 					"speed_multiplier": 1.1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"rooster",
+						"chicken",
+						"mob"
+					]
 				}
 			},
 			"minecraft:rooster_adult": {
@@ -76,6 +83,38 @@
 							0
 						]
 					}
+				},
+				"minecraft:behavior.nearest_attackable_target": {
+					"priority": 1,
+					"entity_types": [
+						{
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "chicken",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player",
+										"operator": "!="
+									}
+								]
+							},
+							"max_dist": 5
+						}
+					]
+				},
+				"minecraft:behavior.melee_attack": {
+					"priority": 4,
+					"speed_multiplier": 1,
+					"track_target": false
+				},
+				"minecraft:attack": {
+					"damage": 1
 				}
 			},
 			"real_chickens:variant_temperate": {
@@ -220,7 +259,7 @@
 		"components": {
 			"minecraft:type_family": {
 				"family": [
-					"chicken",
+					"rooster",
 					"mob"
 				]
 			},
