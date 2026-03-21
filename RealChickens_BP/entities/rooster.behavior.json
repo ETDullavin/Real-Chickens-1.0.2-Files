@@ -1,5 +1,5 @@
 {
-	"format_version": "1.16.0",
+	"format_version": "1.21.90",
 	"minecraft:entity": {
 		"description": {
 			"identifier": "real_chickens:rooster",
@@ -51,8 +51,14 @@
 				},
 				"minecraft:breedable": {
 					"require_tame": false,
+					"causes_pregnancy": true,
 					"breeds_with": {
-						"mate_type": "minecraft:chicken"
+						"mate_type": "minecraft:chicken",
+						"baby_type": "minecraft:chicken",
+						"breed_event": {
+							"event": "real_chickens:on_rooster_parent",
+							"target": "self"
+						}
 					},
 					"breed_items": [
 						"wheat_seeds",
@@ -62,10 +68,6 @@
 						"nether_wart",
 						"torchflower_seeds"
 					]
-				},
-				"minecraft:behavior.breed": {
-					"priority": 3,
-					"speed_multiplier": 1
 				},
 				"minecraft:rideable": {
 					"seat_count": 1,
@@ -504,6 +506,30 @@
 							"component_groups": [
 								"minecraft:rooster_baby",
 								"real_chickens:variant_cold"
+							]
+						}
+					}
+				]
+			},
+			"real_chickens:on_rooster_parent": {
+				"sequence": [
+					{
+						"run_command": {
+							"command": [
+								"tellraw @a {\"rawtext\":[{\"text\":\"§e[Debug] Rooster was chosen as parent. Forcing Chicken pregnancy...\"}]}",
+								"event entity @e[type=chicken,c=1,r=4] become_pregnant"
+							]
+						}
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"minecraft:rooster_adult"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:rooster_adult"
 							]
 						}
 					}
