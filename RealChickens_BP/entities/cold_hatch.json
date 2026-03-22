@@ -109,7 +109,7 @@
             "real_chickens:start_hatching": {
                 "randomize": [
                     {
-                        "weight": 1,
+                        "weight": 67,
                         "add": {
                             "component_groups": [
                                 "real_chickens:hatch_hen"
@@ -117,7 +117,7 @@
                         }
                     },
                     {
-                        "weight": 1,
+                        "weight": 33,
                         "add": {
                             "component_groups": [
                                 "real_chickens:hatch_rooster"
