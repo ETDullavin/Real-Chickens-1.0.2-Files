@@ -11,9 +11,13 @@
 						"pitch": 1,
 						"sound": "mob.chicken.step",
 						"volume": 0.25
-					}
+					},
+					"caw": "mob.rooster.crow"
 				},
-				"pitch": [0.8, 1.2],
+				"pitch": [
+					0.8,
+					1.2
+				],
 				"volume": 1
 			}
 		}
