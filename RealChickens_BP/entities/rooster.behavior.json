@@ -39,6 +39,18 @@
 						"chicken",
 						"mob"
 					]
+				},
+				"minecraft:behavior.tempt": {
+					"priority": 4,
+					"speed_multiplier": 1,
+					"items": [
+						"wheat_seeds",
+						"beetroot_seeds",
+						"melon_seeds",
+						"pumpkin_seeds",
+						"nether_wart",
+						"torchflower_seeds"
+					]
 				}
 			},
 			"minecraft:rooster_adult_wild": {
