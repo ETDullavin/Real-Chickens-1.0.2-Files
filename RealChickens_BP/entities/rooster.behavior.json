@@ -503,31 +503,24 @@
 			"minecraft:conditional_bandwidth_optimization": {}
 		},
 		"events": {
-			"from_egg": {
+			"minecraft:entity_spawned": {
 				"sequence": [
-					{
-						"add": {
-							"component_groups": [
-								"minecraft:rooster_baby"
-							]
-						}
-					},
 					{
 						"add": {
 							"component_groups": [
 								"real_chickens:biome_sensor"
 							]
 						}
-					}
-				]
-			},
-			"minecraft:entity_spawned": {
-				"sequence": [
+					},
 					{
 						"randomize": [
 							{
 								"weight": 95,
-								"trigger": "minecraft:spawn_adult"
+								"add": {
+									"component_groups": [
+										"minecraft:rooster_adult_wild"
+									]
+								}
 							},
 							{
 								"weight": 5,
@@ -538,10 +531,15 @@
 								}
 							}
 						]
-					},
+					}
+				]
+			},
+			"from_egg": {
+				"sequence": [
 					{
 						"add": {
 							"component_groups": [
+								"minecraft:rooster_baby",
 								"real_chickens:biome_sensor"
 							]
 						}
@@ -549,7 +547,6 @@
 				]
 			},
 			"minecraft:entity_born": {
-				"remove": {},
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_baby"
@@ -565,14 +562,6 @@
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_adult",
-						"real_chickens:night_sensor"
-					]
-				}
-			},
-			"minecraft:spawn_adult": {
-				"add": {
-					"component_groups": [
-						"minecraft:rooster_adult_wild",
 						"real_chickens:night_sensor"
 					]
 				}
@@ -614,69 +603,52 @@
 				}
 			},
 			"real_chickens:hatch_as_temperate": {
-				"sequence": [
-					{
-						"add": {
-							"component_groups": [
-								"minecraft:rooster_baby",
-								"real_chickens:variant_temperate"
-							]
-						}
-					}
-				]
+				"add": {
+					"component_groups": [
+						"minecraft:rooster_baby",
+						"real_chickens:variant_temperate"
+					]
+				}
 			},
 			"real_chickens:hatch_as_warm": {
-				"sequence": [
-					{
-						"add": {
-							"component_groups": [
-								"minecraft:rooster_baby",
-								"real_chickens:variant_warm"
-							]
-						}
-					}
-				]
+				"add": {
+					"component_groups": [
+						"minecraft:rooster_baby",
+						"real_chickens:variant_warm"
+					]
+				}
 			},
 			"real_chickens:hatch_as_cold": {
-				"sequence": [
-					{
-						"add": {
-							"component_groups": [
-								"minecraft:rooster_baby",
-								"real_chickens:variant_cold"
-							]
-						}
-					}
-				]
+				"add": {
+					"component_groups": [
+						"minecraft:rooster_baby",
+						"real_chickens:variant_cold"
+					]
+				}
 			},
 			"real_chickens:friendly_interact": {
-				"sequence": [
+				"randomize": [
 					{
-						"randomize": [
-							{
-								"weight": 33,
-								"remove": {
-									"component_groups": [
-										"minecraft:rooster_adult_wild"
-									]
-								},
-								"add": {
-									"component_groups": [
-										"minecraft:rooster_adult"
-									]
-								}
-							},
-							{
-								"weight": 67
-							}
-						]
+						"weight": 33,
+						"remove": {
+							"component_groups": [
+								"minecraft:rooster_adult_wild"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"minecraft:rooster_adult"
+							]
+						}
+					},
+					{
+						"weight": 67
 					}
 				]
 			},
 			"real_chickens:crow": {
 				"queue_command": {
 					"command": [
-						"tellraw @a {\"rawtext\":[{\"text\":\"Rooster should Crow\"}]}",
 						"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
 					]
 				},
@@ -692,11 +664,6 @@
 				}
 			},
 			"real_chickens:reset_crow": {
-				"queue_command": {
-					"command": [
-						"tellraw @a {\"rawtext\":[{\"text\":\"Rooster Crow Reset!\"}]}"
-					]
-				},
 				"add": {
 					"component_groups": [
 						"real_chickens:day_sensor"
