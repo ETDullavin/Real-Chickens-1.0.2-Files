@@ -214,6 +214,10 @@
 								"any_of": [
 									{
 										"test": "has_biome_tag",
+										"value": "taiga"
+									},
+									{
+										"test": "has_biome_tag",
 										"value": "cold"
 									},
 									{
@@ -222,23 +226,7 @@
 									},
 									{
 										"test": "has_biome_tag",
-										"value": "frozen"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "ice"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "mountains"
-									},
-									{
-										"test": "has_biome_tag",
 										"value": "extreme_hills"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "taiga"
 									}
 								]
 							},
@@ -249,19 +237,11 @@
 								"any_of": [
 									{
 										"test": "has_biome_tag",
-										"value": "is_hot"
-									},
-									{
-										"test": "has_biome_tag",
 										"value": "savanna"
 									},
 									{
 										"test": "has_biome_tag",
 										"value": "jungle"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "desert"
 									},
 									{
 										"test": "has_biome_tag",
@@ -276,23 +256,7 @@
 								"none_of": [
 									{
 										"test": "has_biome_tag",
-										"value": "is_hot"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "savanna"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "jungle"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "desert"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "mesa"
+										"value": "taiga"
 									},
 									{
 										"test": "has_biome_tag",
@@ -304,23 +268,19 @@
 									},
 									{
 										"test": "has_biome_tag",
-										"value": "frozen"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "ice"
-									},
-									{
-										"test": "has_biome_tag",
-										"value": "mountains"
-									},
-									{
-										"test": "has_biome_tag",
 										"value": "extreme_hills"
 									},
 									{
 										"test": "has_biome_tag",
-										"value": "taiga"
+										"value": "savanna"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "jungle"
+									},
+									{
+										"test": "has_biome_tag",
+										"value": "mesa"
 									}
 								]
 							},
