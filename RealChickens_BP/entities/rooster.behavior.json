@@ -316,6 +316,32 @@
 						}
 					]
 				}
+			},
+			"real_chickens:day_sensor": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "is_daytime",
+								"value": true
+							},
+							"event": "real_chickens:crow"
+						}
+					]
+				}
+			},
+			"real_chickens:night_sensor": {
+				"minecraft:environment_sensor": {
+					"triggers": [
+						{
+							"filters": {
+								"test": "is_daytime",
+								"value": false
+							},
+							"event": "real_chickens:reset_crow"
+						}
+					]
+				}
 			}
 		},
 		"components": {
@@ -538,14 +564,16 @@
 				},
 				"add": {
 					"component_groups": [
-						"minecraft:rooster_adult"
+						"minecraft:rooster_adult",
+						"real_chickens:night_sensor"
 					]
 				}
 			},
 			"minecraft:spawn_adult": {
 				"add": {
 					"component_groups": [
-						"minecraft:rooster_adult_wild"
+						"minecraft:rooster_adult_wild",
+						"real_chickens:night_sensor"
 					]
 				}
 			},
@@ -644,6 +672,41 @@
 						]
 					}
 				]
+			},
+			"real_chickens:crow": {
+				"queue_command": {
+					"command": [
+						"tellraw @a {\"rawtext\":[{\"text\":\"Rooster should Crow\"}]}",
+						"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"real_chickens:night_sensor"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"real_chickens:day_sensor"
+					]
+				}
+			},
+			"real_chickens:reset_crow": {
+				"queue_command": {
+					"command": [
+						"tellraw @a {\"rawtext\":[{\"text\":\"Rooster Crow Reset!\"}]}"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"real_chickens:day_sensor"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"real_chickens:night_sensor"
+					]
+				}
 			}
 		}
 	}
