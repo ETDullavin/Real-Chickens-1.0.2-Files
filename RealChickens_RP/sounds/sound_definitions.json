@@ -2,10 +2,11 @@
     "mob.rooster.crow": {
         "category": "mob",
         "sounds": [
-            "sounds/mob/rooster/dragon-studio-rooster-crowing-364473",
-            "sounds/mob/rooster/dragon-studio-rooster-crowing-364473",
-            "sounds/mob/rooster/freesound_community-rooster-crows-87917_01",
-            "sounds/mob/rooster/freesound_community-rooster-crows-96293_01"
+            "sounds/mob/rooster/crow_double_1",
+            "sounds/mob/rooster/crow_double_2",
+            "sounds/mob/rooster/crow_double_3",
+            "sounds/mob/rooster/crow_double_4",
+            "sounds/mob/rooster/dragon-studio-rooster-crowing-364473"
         ]
     }
 }

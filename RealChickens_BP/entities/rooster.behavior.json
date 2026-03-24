@@ -89,6 +89,12 @@
 										"subject": "other",
 										"value": "chicken",
 										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "creeper",
+										"operator": "!="
 									}
 								]
 							},
@@ -174,6 +180,12 @@
 										"test": "is_family",
 										"subject": "other",
 										"value": "player",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "creeper",
 										"operator": "!="
 									}
 								]
@@ -313,6 +325,24 @@
 							"event": "real_chickens:reset_crow"
 						}
 					]
+				}
+			},
+			"real_chickens:second_crow_timer": {
+				"minecraft:timer": {
+					"time": 3.0,
+					"looping": false,
+					"time_down_event": {
+						"event": "real_chickens:play_second_crow"
+					}
+				}
+			},
+			"real_chickens:third_crow_timer": {
+				"minecraft:timer": {
+					"time": 3.0,
+					"looping": false,
+					"time_down_event": {
+						"event": "real_chickens:play_third_crow"
+					}
 				}
 			}
 		},
@@ -490,7 +520,8 @@
 								"weight": 95,
 								"add": {
 									"component_groups": [
-										"minecraft:rooster_adult_wild"
+										"minecraft:rooster_adult_wild",
+										"real_chickens:night_sensor"
 									]
 								}
 							},
@@ -619,19 +650,91 @@
 				]
 			},
 			"real_chickens:crow": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"real_chickens:second_crow_timer"
+									]
+								}
+							}
+						]
+					},
+					{
+						"add": {
+							"component_groups": [
+								"real_chickens:night_sensor"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"real_chickens:day_sensor"
+							]
+						}
+					}
+				]
+			},
+			"real_chickens:play_second_crow": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 99,
+								"queue_command": {
+									"command": [
+										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+									]
+								}
+							},
+							{
+								"weight": 1,
+								"queue_command": {
+									"command": [
+										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+									]
+								},
+								"add": {
+									"component_groups": [
+										"real_chickens:third_crow_timer"
+									]
+								}
+							}
+						]
+					},
+					{
+						"remove": {
+							"component_groups": [
+								"real_chickens:second_crow_timer"
+							]
+						}
+					}
+				]
+			},
+			"real_chickens:play_third_crow": {
 				"queue_command": {
 					"command": [
 						"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
 					]
 				},
-				"add": {
-					"component_groups": [
-						"real_chickens:night_sensor"
-					]
-				},
 				"remove": {
 					"component_groups": [
-						"real_chickens:day_sensor"
+						"real_chickens:third_crow_timer"
 					]
 				}
 			},

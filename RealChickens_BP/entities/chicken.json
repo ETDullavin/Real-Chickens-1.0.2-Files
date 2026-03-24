@@ -292,7 +292,8 @@
 					"family": [
 						"chicken",
 						"mob",
-						"broody"
+						"broody",
+						"rooster"
 					]
 				},
 				"minecraft:behavior.mount_pathing": {
