@@ -688,33 +688,32 @@
 				]
 			},
 			"real_chickens:play_second_crow": {
-				"sequence": [
+				"randomize": [
 					{
-						"randomize": [
-							{
-								"weight": 99,
-								"queue_command": {
-									"command": [
-										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
-									]
-								}
-							},
-							{
-								"weight": 1,
-								"queue_command": {
-									"command": [
-										"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
-									]
-								},
-								"add": {
-									"component_groups": [
-										"real_chickens:third_crow_timer"
-									]
-								}
-							}
-						]
+						"weight": 15,
+						"queue_command": {
+							"command": [
+								"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+							]
+						},
+						"remove": {
+							"component_groups": [
+								"real_chickens:second_crow_timer"
+							]
+						}
 					},
 					{
+						"weight": 1,
+						"queue_command": {
+							"command": [
+								"playsound mob.rooster.crow @a ~ ~ ~ 2.0"
+							]
+						},
+						"add": {
+							"component_groups": [
+								"real_chickens:third_crow_timer"
+							]
+						},
 						"remove": {
 							"component_groups": [
 								"real_chickens:second_crow_timer"

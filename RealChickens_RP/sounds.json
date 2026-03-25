@@ -2,23 +2,52 @@
 	"entity_sounds": {
 		"entities": {
 			"real_chickens:rooster": {
+				"volume": 1,
 				"events": {
-					"ambient": "mob.chicken.say",
-					"death": "mob.chicken.hurt",
-					"hurt": "mob.chicken.hurt",
-					"plop": "mob.chicken.plop",
+					"ambient": {
+						"sound": "mob.chicken.say",
+						"pitch": [
+							0.8,
+							1.2
+						]
+					},
+					"ambient.baby": {
+						"sound": "mob.baby_chicken.say",
+						"pitch": 1.0
+					},
+					"death": {
+						"sound": "mob.chicken.hurt",
+						"pitch": [
+							0.8,
+							1.2
+						]
+					},
+					"death.baby": {
+						"sound": "mob.baby_chicken.hurt",
+						"pitch": 1.0
+					},
+					"hurt": {
+						"sound": "mob.chicken.hurt",
+						"pitch": [
+							0.8,
+							1.2
+						]
+					},
+					"hurt.baby": {
+						"sound": "mob.baby_chicken.hurt",
+						"pitch": 1.0
+					},
 					"step": {
-						"pitch": 1,
 						"sound": "mob.chicken.step",
+						"pitch": 1.0,
 						"volume": 0.25
 					},
-					"caw": "mob.rooster.crow"
-				},
-				"pitch": [
-					0.8,
-					1.2
-				],
-				"volume": 1
+					"step.baby": {
+						"sound": "mob.baby_chicken.step",
+						"pitch": 1.0,
+						"volume": 0.25
+					}
+				}
 			}
 		}
 	}
