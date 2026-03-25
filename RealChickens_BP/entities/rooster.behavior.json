@@ -11,9 +11,6 @@
 		"component_groups": {
 			"minecraft:rooster_baby": {
 				"minecraft:is_baby": {},
-				"minecraft:scale": {
-					"value": 0.5
-				},
 				"minecraft:ageable": {
 					"duration": 1200,
 					"feed_items": [

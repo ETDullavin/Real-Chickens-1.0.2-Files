@@ -50,7 +50,7 @@
                 "height": 0.25
             },
             "minecraft:timer": {
-                "time": 1260,
+                "time": 12.60,
                 "looping": false,
                 "time_down_event": {
                     "event": "real_chickens:start_hatching",

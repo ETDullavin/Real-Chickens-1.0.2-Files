@@ -5,18 +5,84 @@
 			"loop": true,
 			"bones": {
 				"head": {
-					"scale": 2
+					"scale": 0
+				},
+				"wing0": {
+					"position": [-2, 0, 0]
+				},
+				"wing1": {
+					"position": [2, 0, 0]
+				},
+				"chick": {
+					"position": [0, -4, 0],
+					"scale": 1
+				},
+				"chick2": {
+					"position": [0, -6, 0],
+					"scale": 1
+				},
+				"chick3": {
+					"position": [0, -6, 0],
+					"scale": 1
+				},
+				"chick4": {
+					"position": [0, -3, 0],
+					"scale": 1
+				},
+				"chick5": {
+					"position": [0, -3, 0],
+					"scale": 1
+				},
+				"adult5": {
+					"scale": 0
+				},
+				"adult": {
+					"scale": 0
+				},
+				"adult2": {
+					"scale": 0
+				},
+				"adult3": {
+					"scale": 0
+				},
+				"adult4": {
+					"scale": 0
 				}
 			}
 		},
 		"animation.rooster.general": {
 			"loop": true,
+			"animation_length": 0.0417,
 			"bones": {
-				"wing0": {
-					"rotation": [0, 0, "variable.wing_flap - this"]
+				"chick5": {
+					"rotation": [0, 0, "-variable.wing_flap - this"],
+					"position": [0, 1, 0],
+					"scale": 1
 				},
-				"wing1": {
-					"rotation": [0, 0, "-variable.wing_flap - this"]
+				"chick": {
+					"position": [0, 0, 0],
+					"scale": 1
+				},
+				"chick2": {
+					"position": [0, 0, 0],
+					"scale": 1
+				},
+				"chick3": {
+					"position": [0, 0, 0],
+					"scale": 1
+				},
+				"chick4": {
+					"rotation": [0, 0, "variable.wing_flap - this"],
+					"position": [0, 1, 0],
+					"scale": 1
+				},
+				"adult4": {
+					"rotation": [0, 0, "variable.wing_flap - this"],
+					"position": [0, 0, 0]
+				},
+				"adult5": {
+					"rotation": [0, 0, "-variable.wing_flap - this"],
+					"position": [0, 0, 0]
 				}
 			}
 		},
@@ -24,10 +90,16 @@
 			"loop": true,
 			"anim_time_update": "query.modified_distance_moved",
 			"bones": {
-				"leg0": {
+				"chick2": {
 					"rotation": ["math.cos(query.anim_time * 38.17) *  80.0", 0, 0]
 				},
-				"leg1": {
+				"chick3": {
+					"rotation": ["math.cos(query.anim_time * 38.17) * -80.0", 0, 0]
+				},
+				"adult2": {
+					"rotation": ["math.cos(query.anim_time * 38.17) *  80.0", 0, 0]
+				},
+				"adult3": {
 					"rotation": ["math.cos(query.anim_time * 38.17) * -80.0", 0, 0]
 				}
 			}
