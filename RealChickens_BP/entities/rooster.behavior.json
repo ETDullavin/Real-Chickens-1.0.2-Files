@@ -11,31 +11,9 @@
 		"component_groups": {
 			"minecraft:rooster_baby": {
 				"minecraft:is_baby": {},
-				"minecraft:ageable": {
-					"duration": 1200,
-					"feed_items": [
-						"wheat_seeds",
-						"beetroot_seeds",
-						"melon_seeds",
-						"pumpkin_seeds",
-						"nether_wart",
-						"torchflower_seeds"
-					],
-					"grow_up": {
-						"event": "minecraft:ageable_grow_up",
-						"target": "self"
-					}
-				},
 				"minecraft:behavior.follow_parent": {
 					"priority": 5,
 					"speed_multiplier": 1.1
-				},
-				"minecraft:type_family": {
-					"family": [
-						"rooster",
-						"chicken",
-						"mob"
-					]
 				},
 				"minecraft:behavior.tempt": {
 					"priority": 4,
@@ -47,6 +25,37 @@
 						"pumpkin_seeds",
 						"nether_wart",
 						"torchflower_seeds"
+					]
+				}
+			},
+			"real_chickens:rooster_grow_up": {
+				"minecraft:ageable": {
+					"duration": 1200,
+					"feed_items": [
+						"wheat_seeds",
+						"beetroot_seeds",
+						"melon_seeds",
+						"pumpkin_seeds",
+						"nether_wart",
+						"torchflower_seeds"
+					],
+					"pause_growth_items": [
+						"golden_dandelion"
+					],
+					"reset_growth_items": [
+						"golden_dandelion"
+					],
+					"grow_up": {
+						"event": "minecraft:ageable_grow_up",
+						"target": "self"
+					}
+				},
+				"minecraft:type_family": {
+					"family": [
+						"rooster",
+						"chicken",
+						"mob",
+						"baby"
 					]
 				}
 			},
@@ -526,7 +535,8 @@
 								"weight": 5,
 								"add": {
 									"component_groups": [
-										"minecraft:rooster_baby"
+										"minecraft:rooster_baby",
+										"real_chickens:rooster_grow_up"
 									]
 								}
 							}
@@ -540,7 +550,8 @@
 						"add": {
 							"component_groups": [
 								"minecraft:rooster_baby",
-								"real_chickens:biome_sensor"
+								"real_chickens:biome_sensor",
+								"real_chickens:rooster_grow_up"
 							]
 						}
 					}
@@ -549,14 +560,16 @@
 			"minecraft:entity_born": {
 				"add": {
 					"component_groups": [
-						"minecraft:rooster_baby"
+						"minecraft:rooster_baby",
+						"real_chickens:rooster_grow_up"
 					]
 				}
 			},
 			"minecraft:ageable_grow_up": {
 				"remove": {
 					"component_groups": [
-						"minecraft:rooster_baby"
+						"minecraft:rooster_baby",
+						"real_chickens:rooster_grow_up"
 					]
 				},
 				"add": {
@@ -606,7 +619,8 @@
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_baby",
-						"real_chickens:variant_temperate"
+						"real_chickens:variant_temperate",
+						"real_chickens:rooster_grow_up"
 					]
 				}
 			},
@@ -614,7 +628,8 @@
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_baby",
-						"real_chickens:variant_warm"
+						"real_chickens:variant_warm",
+						"real_chickens:rooster_grow_up"
 					]
 				}
 			},
@@ -622,7 +637,8 @@
 				"add": {
 					"component_groups": [
 						"minecraft:rooster_baby",
-						"real_chickens:variant_cold"
+						"real_chickens:variant_cold",
+						"real_chickens:rooster_grow_up"
 					]
 				}
 			},
