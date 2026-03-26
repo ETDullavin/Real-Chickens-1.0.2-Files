@@ -778,7 +778,11 @@
 					{
 						"remove": {
 							"component_groups": [
-								"can_breed"
+								"can_breed",
+								"spawn_entity_temperate",
+								"spawn_entity_cold",
+								"spawn_entity_warm",
+								"spawn_entity_gold"
 							]
 						}
 					}

@@ -1,5 +1,164 @@
 import { world, system, ItemStack, EntityComponentTypes } from "@minecraft/server";
 
+world.afterEvents.entitySpawn.subscribe((eventData) => {
+    const { entity } = eventData;
+
+    // It's good practice to ensure the entity is valid before interacting with it
+    if (!entity || !entity.isValid()) return;
+
+    // Check if the newly spawned entity matches the specific typeId you are looking for
+    if (entity.typeId === "real_chickens:temperate_hatch") {
+        const eggTypes = ["real_chickens:egg"];
+
+        // Assuming you already have your 'entity' object defined
+        const dimension = entity.dimension;
+        const location = entity.location;
+        const searchRadius = 2; // Define how far around the entity to search for the egg block
+
+        // Retrieve the block at the entity's exact location
+
+        system.runTimeout(() => {
+            const block = dimension.getBlock(location);
+
+            if (block && block.typeId !== "real_chickens:egg") {
+
+                for (let dx = -searchRadius; dx <= searchRadius; dx++) {
+                    for (let dz = -searchRadius; dz <= searchRadius; dz++) {
+                        for (let dy = -searchRadius; dy <= searchRadius; dy++) {
+                            const checkLocation = {
+                                x: Math.floor(location.x) + dx,
+                                y: Math.floor(location.y) + dy,
+                                z: Math.floor(location.z) + dz
+                            };
+
+                            const searchBlock = dimension.getBlock(checkLocation);
+
+                            if (searchBlock && eggTypes.includes(searchBlock.typeId)) {
+
+                                const entitiesAtEgg = dimension.getEntitiesAtBlockLocation(checkLocation);
+                                const isOccupied = entitiesAtEgg.some(ent =>
+                                    ent.typeId === "real_chickens:temperate_hatch"
+                                );
+
+                                // 4. Only teleport if no other hatch is already there
+                                if (!isOccupied) {
+                                    entity.teleport({
+                                        x: checkLocation.x + 0.5,
+                                        y: checkLocation.y + 0.25,
+                                        z: checkLocation.z + 0.5
+                                    });
+
+                                    return; // Stop searching once we find a valid empty egg
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 1);
+
+    } else if (entity.typeId === "real_chickens:cold_hatch") {
+        const eggTypes = ["real_chickens:blue_egg"];
+
+        // Assuming you already have your 'entity' object defined
+        const dimension = entity.dimension;
+        const location = entity.location;
+        const searchRadius = 2; // Define how far around the entity to search for the egg block
+
+        // Retrieve the block at the entity's exact location
+
+        system.runTimeout(() => {
+            const block = dimension.getBlock(location);
+
+            if (block && block.typeId !== "real_chickens:blue_egg") {
+
+                for (let dx = -searchRadius; dx <= searchRadius; dx++) {
+                    for (let dz = -searchRadius; dz <= searchRadius; dz++) {
+                        for (let dy = -searchRadius; dy <= searchRadius; dy++) {
+                            const checkLocation = {
+                                x: Math.floor(location.x) + dx,
+                                y: Math.floor(location.y) + dy,
+                                z: Math.floor(location.z) + dz
+                            };
+
+                            const searchBlock = dimension.getBlock(checkLocation);
+
+                            if (searchBlock && eggTypes.includes(searchBlock.typeId)) {
+
+                                const entitiesAtEgg = dimension.getEntitiesAtBlockLocation(checkLocation);
+                                const isOccupied = entitiesAtEgg.some(ent =>
+                                    ent.typeId === "real_chickens:cold_hatch"
+                                );
+
+                                // 4. Only teleport if no other hatch is already there
+                                if (!isOccupied) {
+                                    entity.teleport({
+                                        x: checkLocation.x + 0.5,
+                                        y: checkLocation.y + 0.25,
+                                        z: checkLocation.z + 0.5
+                                    });
+
+                                    return; // Stop searching once we find a valid empty egg
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 1);
+
+    } else if (entity.typeId === "real_chickens:warm_hatch") {
+        const eggTypes = ["real_chickens:brown_egg"];
+
+        // Assuming you already have your 'entity' object defined
+        const dimension = entity.dimension;
+        const location = entity.location;
+        const searchRadius = 2; // Define how far around the entity to search for the egg block
+
+        // Retrieve the block at the entity's exact location
+
+        system.runTimeout(() => {
+            const block = dimension.getBlock(location);
+
+            if (block && block.typeId !== "real_chickens:brown_egg") {
+
+                for (let dx = -searchRadius; dx <= searchRadius; dx++) {
+                    for (let dz = -searchRadius; dz <= searchRadius; dz++) {
+                        for (let dy = -searchRadius; dy <= searchRadius; dy++) {
+                            const checkLocation = {
+                                x: Math.floor(location.x) + dx,
+                                y: Math.floor(location.y) + dy,
+                                z: Math.floor(location.z) + dz
+                            };
+
+                            const searchBlock = dimension.getBlock(checkLocation);
+
+                            if (searchBlock && eggTypes.includes(searchBlock.typeId)) {
+
+                                const entitiesAtEgg = dimension.getEntitiesAtBlockLocation(checkLocation);
+                                const isOccupied = entitiesAtEgg.some(ent =>
+                                    ent.typeId === "real_chickens:warm_hatch"
+                                );
+
+                                // 4. Only teleport if no other hatch is already there
+                                if (!isOccupied) {
+                                    entity.teleport({
+                                        x: checkLocation.x + 0.5,
+                                        y: checkLocation.y + 0.25,
+                                        z: checkLocation.z + 0.5
+                                    });
+
+                                    return; // Stop searching once we find a valid empty egg
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }, 1);
+    }
+});
+
 world.afterEvents.entityDie.subscribe((eventData) => {
     const { deadEntity, damageSource } = eventData;
 
