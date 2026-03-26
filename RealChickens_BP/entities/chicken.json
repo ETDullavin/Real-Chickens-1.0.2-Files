@@ -28,7 +28,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -101,7 +101,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -126,7 +126,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -151,7 +151,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -176,7 +176,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -201,7 +201,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
@@ -226,7 +226,7 @@
 					"speed_multiplier": 1,
 					"search_range": 10,
 					"search_height": 3,
-					"goal_radius": 1,
+					"goal_radius": 1.5,
 					"target_blocks": [
 						"minecraft:dirt",
 						"minecraft:coarse_dirt",
