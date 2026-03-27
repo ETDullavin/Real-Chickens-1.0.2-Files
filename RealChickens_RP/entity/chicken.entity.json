@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:chicken",
+            "materials": {
+                "default": "chicken"
+            },
+            "textures": {
+                "default": "textures/entity/chicken/chicken",
+                "warm": "textures/entity/chicken/chicken_warm",
+                "cold": "textures/entity/chicken/chicken_cold"
+            },
+            "geometry": {
+                "default": "geometry.chicken"
+            },
+            "animations": {
+                "move": "animation.chicken.move",
+                "general": "animation.chicken.general",
+                "look_at_target": "animation.common.look_at_target",
+                "baby_transform": "animation.chicken.baby_transform"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.chicken_variant = query.property('minecraft:climate_variant');",
+                    "variable.geometry = query.is_riding ? 'riding' : 'default';"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.chicken_custom"
+            ],
+            "spawn_egg": {
+                "texture": "spawn_egg",
+                "texture_index": 10
+            }
+        }
+    }
+}

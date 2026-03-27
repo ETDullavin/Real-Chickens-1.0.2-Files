@@ -24,7 +24,8 @@
 						"melon_seeds",
 						"pumpkin_seeds",
 						"nether_wart",
-						"torchflower_seeds"
+						"torchflower_seeds",
+						"pitcher_pod"
 					]
 				}
 			},
@@ -37,7 +38,8 @@
 						"melon_seeds",
 						"pumpkin_seeds",
 						"nether_wart",
-						"torchflower_seeds"
+						"torchflower_seeds",
+						"pitcher_pod"
 					],
 					"pause_growth_items": [
 						"golden_dandelion"
@@ -140,7 +142,8 @@
 						"melon_seeds",
 						"pumpkin_seeds",
 						"nether_wart",
-						"torchflower_seeds"
+						"torchflower_seeds",
+						"pitcher_pod"
 					]
 				},
 				"minecraft:experience_reward": {
@@ -167,7 +170,8 @@
 						"melon_seeds",
 						"pumpkin_seeds",
 						"nether_wart",
-						"torchflower_seeds"
+						"torchflower_seeds",
+						"pitcher_pod"
 					]
 				},
 				"minecraft:behavior.nearest_attackable_target": {
@@ -401,6 +405,12 @@
 												"subject": "other",
 												"domain": "hand",
 												"value": "torchflower_seeds"
+											},
+											{
+												"test": "has_equipment",
+												"subject": "other",
+												"domain": "hand",
+												"value": "pitcher_pod"
 											}
 										]
 									}
