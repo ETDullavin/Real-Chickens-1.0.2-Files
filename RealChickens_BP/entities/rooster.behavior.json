@@ -665,6 +665,11 @@
 							"component_groups": [
 								"minecraft:rooster_adult"
 							]
+						},
+						"queue_command": {
+							"command": [
+								"particle minecraft:totem_particle ~ ~ ~"
+							]
 						}
 					},
 					{
