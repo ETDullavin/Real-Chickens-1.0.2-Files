@@ -1,0 +1,25 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "real_chickens:unfertilized_egg_recipe"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "ingredients": [
+            {
+                "item": "minecraft:golden_dandelion",
+                "count": 1
+            },
+            {
+                "item": "real_chickens:egg",
+                "count": 1
+            }
+        ],
+        "result": {
+            "item": "real_chickens:unfertilized_egg",
+            "count": 1
+        }
+    }
+}

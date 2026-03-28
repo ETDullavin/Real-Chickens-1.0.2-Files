@@ -1,0 +1,42 @@
+{
+    "format_version": "1.21.100",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "nature",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "real_chickens:egg",
+                            "name": "real_chickens:temperate_eggs"
+                        },
+                        "items": [
+                            "real_chickens:egg",
+                            "real_chickens:unfertilized_egg"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "real_chickens:blue_egg",
+                            "name": "real_chickens:cool_eggs"
+                        },
+                        "items": [
+                            "real_chickens:blue_egg",
+                            "real_chickens:unfertilized_blue_egg"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "icon": "real_chickens:brown_egg",
+                            "name": "real_chickens:warm_eggs"
+                        },
+                        "items": [
+                            "real_chickens:brown_egg",
+                            "real_chickens:unfertilized_brown_egg"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

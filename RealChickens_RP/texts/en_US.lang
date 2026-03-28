@@ -1,9 +1,15 @@
 tile.real_chickens:egg.name=Egg
+tile.real_chickens:unfertilized_egg.name=Unfertilized Egg
 tile.real_chickens:brown_egg.name=Brown Egg
+tile.real_chickens:unfertilized_brown_egg.name=Unfertilized Brown Egg
 tile.real_chickens:blue_egg.name=Blue Egg
-tile.real_chickens:gold_egg.name=Gold Egg
+tile.real_chickens:unfertilized_blue_egg.name=Unfertilized Blue Egg
+tile.real_chickens:gold_egg.name=Golden Egg
 entity.real_chickens:temperate_hatch.name=Egg
 entity.real_chickens:warm_hatch.name=Brown Egg
 entity.real_chickens:cold_hatch.name=Blue Egg
 entity.real_chickens:rooster.name=Rooster
 item.spawn_egg.entity.real_chickens:rooster.name=Rooster Spawn Egg
+real_chickens:temperate_eggs=Egg Blocks
+real_chickens:cool_eggs=Blue Egg Blocks
+real_chickens:warm_eggs=Brown Egg Blocks

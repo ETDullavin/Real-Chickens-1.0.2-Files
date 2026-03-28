@@ -9,6 +9,15 @@
 	"real_chickens:egg": {
 		"sound": "glass"
 	},
+	"real_chickens:unfertilized_blue_egg": {
+		"sound": "glass"
+	},
+	"real_chickens:unfertilized_brown_egg": {
+		"sound": "glass"
+	},
+	"real_chickens:unfertilized_egg": {
+		"sound": "glass"
+	},
 	"real_chickens:gold_egg": {
 		"sound": "metal"
 	}
