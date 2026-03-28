@@ -22,7 +22,7 @@
 					"scale": 1
 				},
 				"chick3": {
-					"position": [0, -6, 0],
+					"position": [0, -2, 0],
 					"scale": 1
 				},
 				"chick4": {
@@ -47,6 +47,9 @@
 				},
 				"adult4": {
 					"scale": 0
+				},
+				"leg1": {
+					"position": [0, -4, 0]
 				}
 			}
 		},
@@ -68,7 +71,6 @@
 					"scale": 1
 				},
 				"chick3": {
-					"position": [0, 0, 0],
 					"scale": 1
 				},
 				"chick4": {

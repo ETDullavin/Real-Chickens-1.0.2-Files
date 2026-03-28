@@ -1,0 +1,179 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "real_chickens:egg_item_spawn_selector",
+            "runtime_identifier": "minecraft:chicken",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "components": {
+            "minecraft:damage_sensor": {
+                "triggers": {
+                    "cause": "all",
+                    "damage_modifier": 0.0,
+                    "deals_damage": false
+                }
+            },
+            "minecraft:timer": {
+                "time": 0.2,
+                "time_down_event": {
+                    "event": "real_chickens:despawn"
+                }
+            }
+        },
+        "events": {
+            "real_chickens:despawn": {
+                "add": {
+                    "component_groups": [
+                        "despawn"
+                    ]
+                }
+            },
+            "real_chickens:hatch_temperate": {
+                "randomize": [
+                    {
+                        "weight": 67,
+                        "add": {
+                            "component_groups": [
+                                "spawn_temperate_chicken"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 33,
+                        "add": {
+                            "component_groups": [
+                                "spawn_temperate_rooster"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "real_chickens:hatch_warm": {
+                "randomize": [
+                    {
+                        "weight": 67,
+                        "add": {
+                            "component_groups": [
+                                "spawn_warm_chicken"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 33,
+                        "add": {
+                            "component_groups": [
+                                "spawn_warm_rooster"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "real_chickens:hatch_cold": {
+                "randomize": [
+                    {
+                        "weight": 67,
+                        "add": {
+                            "component_groups": [
+                                "spawn_cold_chicken"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 33,
+                        "add": {
+                            "component_groups": [
+                                "spawn_cold_rooster"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "component_groups": {
+            "despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "spawn_temperate_chicken": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "minecraft:chicken",
+                            "spawn_event": "set_temperate_variant",
+                            "single_use": true
+                        }
+                    ]
+                }
+            },
+            "spawn_warm_chicken": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "minecraft:chicken",
+                            "spawn_event": "set_warm_variant",
+                            "single_use": true
+                        }
+                    ]
+                }
+            },
+            "spawn_cold_chicken": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "minecraft:chicken",
+                            "spawn_event": "set_cold_variant",
+                            "single_use": true
+                        }
+                    ]
+                }
+            },
+            "spawn_temperate_rooster": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "real_chickens:rooster",
+                            "spawn_event": "real_chickens:selector_hatch_temperate",
+                            "single_use": true
+                        }
+                    ]
+                }
+            },
+            "spawn_warm_rooster": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "real_chickens:rooster",
+                            "spawn_event": "real_chickens:selector_hatch_warm",
+                            "single_use": true
+                        }
+                    ]
+                }
+            },
+            "spawn_cold_rooster": {
+                "minecraft:spawn_entity": {
+                    "entities": [
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "real_chickens:rooster",
+                            "spawn_event": "real_chickens:selector_hatch_cold",
+                            "single_use": true
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

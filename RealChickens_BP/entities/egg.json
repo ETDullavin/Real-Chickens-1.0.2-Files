@@ -44,10 +44,18 @@
                     "spawn_chance": {
                         "first_spawn_chance": 8,
                         "first_spawn_count": 1,
-                        "spawn_baby": true,
                         "on_spawn": [
                             {
-                                "event": "minecraft:hatch_warm",
+                                "event": "real_chickens:hatch_temperate",
+                                "filters": {
+                                    "domain": "minecraft:climate_variant",
+                                    "subject": "other",
+                                    "test": "enum_property",
+                                    "value": "temperate"
+                                }
+                            },
+                            {
+                                "event": "real_chickens:hatch_warm",
                                 "filters": {
                                     "domain": "minecraft:climate_variant",
                                     "subject": "other",
@@ -56,7 +64,7 @@
                                 }
                             },
                             {
-                                "event": "minecraft:hatch_cold",
+                                "event": "real_chickens:hatch_cold",
                                 "filters": {
                                     "domain": "minecraft:climate_variant",
                                     "subject": "other",
@@ -65,7 +73,7 @@
                                 }
                             }
                         ],
-                        "spawn_definition": "minecraft:chicken",
+                        "spawn_definition": "real_chickens:egg_item_spawn_selector",
                         "second_spawn_chance": 32,
                         "second_spawn_count": 4
                     },
