@@ -9,6 +9,15 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"real_chickens:calming_down": {
+				"minecraft:timer": {
+					"time": 0.1,
+					"looping": false,
+					"time_down_event": {
+						"event": "real_chickens:become_tame"
+					}
+				}
+			},
 			"minecraft:rooster_baby": {
 				"minecraft:is_baby": {},
 				"minecraft:behavior.follow_parent": {
@@ -103,15 +112,69 @@
 										"subject": "other",
 										"value": "creeper",
 										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "villager",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "irongolem",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "snowgolem",
+										"operator": "!="
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"value": "minecraft:is_tamed",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "copper_golem",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "wandering_trader",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "sniffer",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "allay",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "bees",
+										"operator": "!="
 									}
 								]
 							},
-							"max_dist": 5
+							"max_dist": 3.75
 						}
 					]
 				},
 				"minecraft:behavior.melee_attack": {
-					"priority": 4,
+					"priority": 5,
 					"speed_multiplier": 1,
 					"track_target": false
 				},
@@ -175,7 +238,7 @@
 					]
 				},
 				"minecraft:behavior.nearest_attackable_target": {
-					"priority": 3,
+					"priority": 5,
 					"entity_types": [
 						{
 							"filters": {
@@ -197,15 +260,81 @@
 										"subject": "other",
 										"value": "creeper",
 										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "villager",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "irongolem",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "snowgolem",
+										"operator": "!="
+									},
+									{
+										"test": "has_component",
+										"subject": "other",
+										"value": "minecraft:is_tamed",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "copper_golem",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "wandering_trader",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "trader_llama",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "sniffer",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "allay",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "bees",
+										"operator": "!="
+									},
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "armor_stand",
+										"operator": "!="
 									}
 								]
 							},
-							"max_dist": 5
+							"max_dist": 3.75
 						}
 					]
 				},
 				"minecraft:behavior.melee_attack": {
-					"priority": 4,
+					"priority": 5,
 					"speed_multiplier": 1,
 					"track_target": false
 				},
@@ -663,7 +792,7 @@
 						},
 						"add": {
 							"component_groups": [
-								"minecraft:rooster_adult"
+								"real_chickens:calming_down"
 							]
 						},
 						"queue_command": {
@@ -774,6 +903,18 @@
 				"remove": {
 					"component_groups": [
 						"real_chickens:night_sensor"
+					]
+				}
+			},
+			"real_chickens:become_tame": {
+				"remove": {
+					"component_groups": [
+						"real_chickens:calming_down"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:rooster_adult"
 					]
 				}
 			}
