@@ -1,1 +1,1 @@
-Download newest version of the addon by going to release and downloading the ".mcaddon" file.
+Download newest version of the addon by going to release and downloading the ".mcaddon" file. You can use it in the game by clicking on the file in your file explorer, which will open Minecraft and auto download it for you.
