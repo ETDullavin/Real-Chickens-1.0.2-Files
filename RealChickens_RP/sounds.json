@@ -5,7 +5,7 @@
 				"volume": 1,
 				"events": {
 					"ambient": {
-						"sound": "mob.chicken.say",
+						"sound": "mob.rooster.say",
 						"pitch": [
 							0.8,
 							1.2
@@ -16,7 +16,7 @@
 						"pitch": 1.0
 					},
 					"death": {
-						"sound": "mob.chicken.hurt",
+						"sound": "mob.rooster.hurt",
 						"pitch": [
 							0.8,
 							1.2
@@ -27,7 +27,7 @@
 						"pitch": 1.0
 					},
 					"hurt": {
-						"sound": "mob.chicken.hurt",
+						"sound": "mob.rooster.hurt",
 						"pitch": [
 							0.8,
 							1.2
@@ -46,6 +46,17 @@
 						"sound": "mob.baby_chicken.step",
 						"pitch": 1.0,
 						"volume": 0.25
+					},
+					"spawn": {
+						"sound": "mob.rooster.say",
+						"pitch": [
+							0.8,
+							1.2
+						]
+					},
+					"spawn.baby": {
+						"sound": "mob.baby_chicken.say",
+						"pitch": 1.0
 					}
 				}
 			}

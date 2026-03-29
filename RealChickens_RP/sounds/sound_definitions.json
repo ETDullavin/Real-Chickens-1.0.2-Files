@@ -8,5 +8,21 @@
             "sounds/mob/rooster/crow_double_4",
             "sounds/mob/rooster/dragon-studio-rooster-crowing-364473"
         ]
+    },
+    "mob.rooster.say": {
+        "category": "mob",
+        "sounds": [
+            "sounds/mob/rooster/rooster_say_1",
+            "sounds/mob/rooster/rooster_say_1",
+            "sounds/mob/rooster/rooster_say_1",
+            "sounds/mob/rooster/rooster_say_2"
+        ]
+    },
+    "mob.rooster.hurt": {
+        "category": "mob",
+        "sounds": [
+            "sounds/mob/rooster/rooster_hurt",
+            "sounds/mob/rooster/rooster_hurt_1"
+        ]
     }
 }
